@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
+import eventsReducer from './eventsReducer';
 
-const dummy = () => {
-  return "dummy reducer";
-}
 
-export default dummy;
+export default combineReducers({
+  events: eventsReducer
+});
