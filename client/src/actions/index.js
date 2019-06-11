@@ -2,10 +2,10 @@
 import dbCaller from '../apis/dbCaller';
 
 
-export const fetchEvents = () => async (dispatch) => {
-    const response = await dbCaller.get('/events');
+export const fetchEvent = (id) => async (dispatch) => {
+    const response = await dbCaller.get(`/events/${id}`);
     dispatch ({
-      type:'FETCH_EVENTS',
+      type:'FETCH_EVENT',
       payload: response.data
     });
   };

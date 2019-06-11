@@ -4,9 +4,10 @@ import Event from "./Event";
 class App extends React.Component{
 
   render(){
+
     return(
       <div>
-        <Event/>
+        <Event eventId="1"/>
       </div>
     )
   }
