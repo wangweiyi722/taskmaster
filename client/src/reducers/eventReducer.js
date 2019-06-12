@@ -1,8 +1,8 @@
-export default (state=[],action) => {
+export default (state={},action) => {
   switch (action.type) {
     case 'FETCH_EVENT':
       //payload is the response returned from the API
-      return action.payload;
+      return ({...state,id:action.payload.id,title:action.payload.title});
     default:
       return state;
   }

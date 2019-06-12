@@ -12,11 +12,9 @@ class Event extends React.Component{
   //location
   //task list
   componentDidMount(){
-    console.log(this.props);
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
-    console.log(this.state);
   }
 
 
@@ -26,7 +24,8 @@ class Event extends React.Component{
         <table>
           <tbody>
             <tr>
-              <td>test:</td><td>{this.props.id}</td>
+              <td>test id:</td><td>{this.props.eventId}</td>
+              <td>test title:</td><td>{this.props.title}</td>
             </tr>
           </tbody>
         </table>
@@ -35,14 +34,14 @@ class Event extends React.Component{
   }
 }
 
-const mapStateToProps = (state,ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    "id":ownProps.eventId,
-    "title":state.title,
-    "date":state.date,
-    "time":state.time,
-    "location":state.location,
-    "tasklist":state.tasklist
+    id:state.event.id,
+    title:state.event.title,
+    date:state.event.date,
+    time:state.event.time,
+    location:state.event.location,
+    tasklist:state.event.tasklist
   };
 }
 
