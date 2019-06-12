@@ -7,6 +7,14 @@
       "time":"01:00 AM",
       "location":"somewhere",
       "tasklist":[1,2,3,4]
+    },
+    {
+      "id":2,
+      "title":"test event2",
+      "date":"01-02-2019",
+      "time":"02:00 AM",
+      "location":"somewhere2",
+      "tasklist":[1,2,3,4]
     }
   ]
 }

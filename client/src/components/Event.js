@@ -12,6 +12,7 @@ class Event extends React.Component{
   //location
   //task list
   componentDidMount(){
+    console.log(this.props.eventId);
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
@@ -24,8 +25,13 @@ class Event extends React.Component{
         <table>
           <tbody>
             <tr>
-              <td>test id:</td><td>{this.props.eventId}</td>
+              <td>test id:</td><td>{this.props.id}</td>
+            </tr>
+            <tr>
               <td>test title:</td><td>{this.props.title}</td>
+            </tr>
+            <tr>
+              <td>test date:</td><td>{this.props.date}</td>
             </tr>
           </tbody>
         </table>
