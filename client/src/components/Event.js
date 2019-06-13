@@ -12,7 +12,6 @@ class Event extends React.Component{
   //location
   //task list
   componentDidMount(){
-    console.log(this.props.eventId);
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
@@ -40,15 +39,9 @@ class Event extends React.Component{
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    id:state.event.id,
-    title:state.event.title,
-    date:state.event.date,
-    time:state.event.time,
-    location:state.event.location,
-    tasklist:state.event.tasklist
-  };
+const mapStateToProps = (state,ownProps) => {
+
+  return state.events[ownProps.eventId];
 }
 
 export default connect(mapStateToProps,{fetchEvent:fetchEvent})(Event);
