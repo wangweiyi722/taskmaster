@@ -16,5 +16,23 @@
       "location":"somewhere2",
       "tasklist":[1,2,3,4]
     }
+  ],
+  "tasks":[
+    {
+      "id":1,
+      "description":"task1"
+    },
+    {
+      "id":2,
+      "description":"task2"
+    },
+    {
+      "id":3,
+      "description":"task3"
+    },
+    {
+      "id":4,
+      "description":"task4"
+    }
   ]
 }
