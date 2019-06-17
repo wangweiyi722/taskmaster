@@ -1,37 +1,35 @@
 {
   "events":[
     {
-      "id":1,
+      "id":"e1",
       "title":"test event",
-      "date":"01-01-2019",
-      "time":"01:00 AM",
+      "time":1560795026265,
       "location":"somewhere",
-      "tasklist":[1,2,3,4]
+      "tasklist":["t1","t2","t3","t4"]
     },
     {
-      "id":2,
+      "id":"e2",
       "title":"test event2",
-      "date":"01-02-2019",
-      "time":"02:00 AM",
+      "time":1560796026265,
       "location":"somewhere2",
-      "tasklist":[1,2,3,4]
+      "tasklist":["t1","t2","t3","t4"]
     }
   ],
   "tasks":[
     {
-      "id":1,
+      "id":"t1",
       "description":"task1"
     },
     {
-      "id":2,
+      "id":"t2",
       "description":"task2"
     },
     {
-      "id":3,
+      "id":"t3",
       "description":"task3"
     },
     {
-      "id":4,
+      "id":"t4",
       "description":"task4"
     }
   ]

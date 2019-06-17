@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchEvent} from '../actions';
+import TaskList from './TaskList';
 
 class Event extends React.Component{
 
@@ -19,6 +20,8 @@ class Event extends React.Component{
 
 
   render(){
+    console.log("event");
+    console.log(this.props);
     return(
       <div>
         <table>
@@ -30,10 +33,12 @@ class Event extends React.Component{
               <td>test title:</td><td>{this.props.title}</td>
             </tr>
             <tr>
-              <td>test date:</td><td>{this.props.date}</td>
+              <td>test time:</td><td>{this.props.time}</td>
             </tr>
           </tbody>
+
         </table>
+        <TaskList listOfTaskIds={this.props.tasklist}/>
       </div>
     );
   }
