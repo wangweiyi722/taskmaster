@@ -13,7 +13,7 @@ export const fetchEvent = (id) => async (dispatch) => {
 export const fetchTask = (id) => async (dispatch) => {
   const response = await dbCaller.get(`/tasks/${id}`);
   dispatch ({
-    type:'FETCH_EVENT',
+    type:'FETCH_TASK',
     payload: response.data
   });
 };
