@@ -9,7 +9,7 @@ class App extends React.Component{
 
     return(
       <div>
-        <TaskList listOfTaskIds={["t1","t2"]}/>
+        <Task taskId="t1"/>
       </div>
     )
   }

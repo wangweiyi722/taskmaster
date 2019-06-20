@@ -1,48 +1,58 @@
 {
-  "events":[
+  "events": [
     {
-      "id":"e1",
-      "title":"test event",
-      "time":1560795026265,
-      "location":"somewhere",
-      "tasklist":["t1","t2","t3","t4"]
+      "id": "e1",
+      "title": "test event",
+      "time": 1560795026265,
+      "location": "somewhere",
+      "tasklist": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
     },
     {
-      "id":"e2",
-      "title":"test event2",
-      "time":1560796026265,
-      "location":"somewhere2",
-      "tasklist":["t1","t2","t3","t4"]
+      "id": "e2",
+      "title": "test event2",
+      "time": 1560796026265,
+      "location": "somewhere2",
+      "tasklist": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
     }
   ],
-  "tasks":[
+  "tasks": [
     {
-      "id":"t1",
-      "description":"task1",
-      "deadline":1560795026265,
-      "assignee":"someone@example.com",
-      "completed":false
+      "description": "task3",
+      "deadline": 1560795026265,
+      "assignee": "someone@example.com",
+      "completed": false,
+      "id": "t1"
     },
     {
-      "id":"t2",
-      "description":"task2",
-      "deadline":1560795026265,
-      "assignee":"someone@example.com",
-      "completed":false
+      "description": "task3",
+      "deadline": 1560795026265,
+      "assignee": "someone@example.com",
+      "completed": false,
+      "id": "t2"
     },
     {
-      "id":"t3",
-      "description":"task3",
-      "deadline":1560795026265,
-      "assignee":"someone@example.com",
-      "completed":false
+      "id": "t3",
+      "description": "task3",
+      "deadline": 1560795026265,
+      "assignee": "someone@example.com",
+      "completed": false
     },
     {
-      "id":"t4",
-      "description":"task4",
-      "deadline":1560795026265,
-      "assignee":"someone@example.com",
-      "completed":false
+      "id": "t4",
+      "description": "task4",
+      "deadline": 1560795026265,
+      "assignee": "someone@example.com",
+      "completed": false
     }
   ]
 }
