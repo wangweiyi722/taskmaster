@@ -33,7 +33,10 @@ class Event extends React.Component{
               <td>test title:</td><td>{this.props.title}</td>
             </tr>
             <tr>
-              <td>test time:</td><td>{this.props.time}</td>
+              <td>test start time:</td><td>{this.props.startTime}</td>
+            </tr>
+            <tr>
+              <td>test end time:</td><td>{this.props.endTime}</td>
             </tr>
           </tbody>
 

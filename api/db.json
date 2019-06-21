@@ -3,7 +3,8 @@
     {
       "id": "e1",
       "title": "test event",
-      "time": 1560795026265,
+      "startTime": 1560795026265,
+      "endTime": 1560795026265,
       "location": "somewhere",
       "tasklist": [
         "t1",
@@ -16,6 +17,7 @@
       "id": "e2",
       "title": "test event2",
       "time": 1560796026265,
+      "endTime": 1560795026265,
       "location": "somewhere2",
       "tasklist": [
         "t1",
