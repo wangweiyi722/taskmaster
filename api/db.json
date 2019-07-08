@@ -11,7 +11,22 @@
         "t2",
         "t3",
         "t4"
-      ]
+      ],
+      "tasks": [
+        {
+          "description": "task3",
+          "deadline": 1560795026265,
+          "assignee": "someone@example.com",
+          "completed": false,
+          "id": "t1"
+        },
+        {
+          "description": "task3",
+          "deadline": 1560795026265,
+          "assignee": "someone@example.com",
+          "completed": false,
+          "id": "t2"
+        }]
     },
     {
       "id": "e2",
@@ -24,6 +39,22 @@
         "t2",
         "t3",
         "t4"
+      ],
+      "tasks": [
+        {
+          "id": "t3",
+          "description": "task3",
+          "deadline": 1560795026265,
+          "assignee": "someone@example.com",
+          "completed": false
+        },
+        {
+          "id": "t4",
+          "description": "task4",
+          "deadline": 1560795026265,
+          "assignee": "someone@example.com",
+          "completed": false
+        }
       ]
     }
   ],

@@ -9,7 +9,7 @@ class App extends React.Component{
 
     return(
       <div>
-        <Task taskId="t1"/>
+        <Event eventId="e1"/>
       </div>
     )
   }
