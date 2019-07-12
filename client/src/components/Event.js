@@ -13,7 +13,6 @@ class Event extends React.Component{
   //location
   //task list
   componentDidMount(){
-
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
@@ -23,33 +22,6 @@ class Event extends React.Component{
   render(){
     console.log("event");
     console.log(this.props);
-    var tasks = null;
-    if(this.props.tasks){
-      tasks = this.props.tasks.map((task)=>{
-        return (
-          <div>
-            <table>
-              <tbody>
-                <tr>
-                  <td>Task:</td><td>{task.id}</td>
-                </tr>
-                <tr>
-                  <td>Description:</td><td>{task.description}</td>
-                </tr>
-                <tr>
-                  <td>Completed:</td><td>{task.completed?"yes":"no"}</td>
-                </tr>
-              </tbody>
-            </table>
-            <button onClick={() => task.changeCompletion(task.id)}>{task.completed?"Mark Incomplete":"Mark Complete"}</button>
-          </div>
-        );})
-    }
-    else{
-      return <div>loading</div>;
-    }
-
-
     return(
       <div>
         <table>
@@ -69,7 +41,7 @@ class Event extends React.Component{
           </tbody>
 
         </table>
-        {tasks}
+        <TaskList listOfTaskIds={this.props.tasklist}/>
       </div>
     );
   }
