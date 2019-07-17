@@ -20,7 +20,7 @@ export const fetchTask = (id) => async (dispatch) => {
 
 export const changeCompletion = (props) => async (dispatch) => {
 
-  const response = await dbCaller.put(`/tasks/${props.id}`,{"description":props.description,"deadline":props.deadline,"assignee":props.assignee,"completed":!props.completed});
+  const response = await dbCaller.put(`/tasks/${props.id}`,{"description":props.description,"deadline":props.deadline,"assignee":props.assignee,"eventId":props.eventId,"completed":!props.completed});
   dispatch ({
     type:'CHANGE_COMPLETION',
     payload: response.data
