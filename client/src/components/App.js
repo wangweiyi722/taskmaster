@@ -7,25 +7,11 @@ import TaskCreate from "./TaskCreate";
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 
-const testTask = () => {
-  return <Task taskId="t1"/>
-}
-
 class App extends React.Component{
 
-
-
   render(){
-
-
-
     return(
-      <div>
-        <BrowserRouter>
-          <Route path="/tasks/new" exact component={TaskCreate}/>
-          <Route path="/" exact component={testTask}/>
-        </BrowserRouter>
-      </div>
+      <TaskCreate eventID="e1"></TaskCreate>
     )
   }
 
