@@ -1,14 +1,14 @@
 {
   "events": [
     {
-      "id": "e1",
+      "id": "1",
       "title": "test event",
       "startTime": 1560795026265,
       "endTime": 1560795026265,
       "location": "somewhere"
     },
     {
-      "id": "e2",
+      "id": "2",
       "title": "test event2",
       "time": 1560796026265,
       "endTime": 1560795026265,
@@ -17,36 +17,36 @@
   ],
   "tasks": [
     {
-      "description": "task3",
+      "description": "task1",
       "deadline": 1560795026265,
       "assignee": "someone@example.com",
-      "eventId": "e1",
+      "eventId": "1",
       "completed": false,
-      "id": "t1"
+      "id": "1"
     },
     {
-      "description": "task3",
-      "deadline": 1560795026265,
-      "assignee": "someone@example.com",
-      "completed": false,
-      "eventId": "e1",
-      "id": "t2"
-    },
-    {
-      "id": "t3",
-      "description": "task3",
+      "description": "task2",
       "deadline": 1560795026265,
       "assignee": "someone@example.com",
       "completed": false,
-      "eventId": "e2"
+      "eventId": "1",
+      "id": "2"
     },
     {
-      "id": "t4",
+      "id": "3",
+      "description": "task3",
+      "deadline": 1560795026265,
+      "assignee": "someone@example.com",
+      "completed": false,
+      "eventId": "2"
+    },
+    {
+      "id": "4",
       "description": "task4",
       "deadline": 1560795026265,
       "assignee": "someone@example.com",
       "completed": false,
-      "eventId": "e2"
+      "eventId": "2"
     }
   ]
 }

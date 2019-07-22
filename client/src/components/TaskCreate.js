@@ -3,6 +3,11 @@ import {Field, reduxForm} from 'redux-form';
 
 class TaskCreate extends React.Component {
 
+  constructor(props){
+    super(props);
+    console.log(props.eventID);
+
+  }
 
   //renderInput is passed an argument with various properties whenever it is called within a component
   renderInput(formProps){
@@ -22,16 +27,18 @@ class TaskCreate extends React.Component {
     );
   }
 
-  onSubmit(event){
-    event.preventDefault();
+  onSubmit(formValues){
+    console.log(formValues);
   }
 
   render(){
+    //handleSubmit is a helper function from
     return (
-      <form className="ui form">
+      <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form">
         <Field name="description" component={this.renderInput} label="Enter Description"/>
         <Field name="deadline" component={this.renderInput} label="Enter Deadline"/>
         <Field name="assignee" component={this.renderInput} label="Enter Assignee"/>
+        <button className="ui button primary">Submit</button>
       </form>
     );
   }
