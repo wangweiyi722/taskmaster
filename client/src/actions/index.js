@@ -27,3 +27,6 @@ export const changeCompletion = (props) => async (dispatch) => {
   });
 };
 // Create a named export. Export many different functions from a single file
+
+// Action creator for creating a task from a form
+export const createTask = (formValues) => async (dispatch) => dbCaller.post('/tasks',formValues);

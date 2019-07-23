@@ -1,11 +1,13 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
+import {connect} from 'react-redux';
+import {createTask} from '../actions';
 
 class TaskCreate extends React.Component {
 
   constructor(props){
     super(props);
-    console.log(props.eventID);
+    const eventId = props.eventId;
 
   }
 
@@ -27,8 +29,13 @@ class TaskCreate extends React.Component {
     );
   }
 
-  onSubmit(formValues){
+  onSubmit = (formValues)=>{
     console.log(formValues);
+    //Add the eventID that was passed in as a prop from App.js as a new key in formValues
+    formValues.eventId = this.props.eventId;
+    formValues.completed = false;
+    this.props.createTask(formValues);
+
   }
 
   render(){
@@ -44,6 +51,9 @@ class TaskCreate extends React.Component {
   }
 }
 
-export default reduxForm({
+// Form connector
+const formWrapped = reduxForm({
   form:'TaskCreate'
 })(TaskCreate);
+
+export default connect(null, {createTask})(formWrapped)
