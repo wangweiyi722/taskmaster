@@ -5,12 +5,6 @@ import {createTask} from '../actions';
 
 class TaskCreate extends React.Component {
 
-  constructor(props){
-    super(props);
-    const eventId = props.eventId;
-
-  }
-
   //renderInput is passed an argument with various properties whenever it is called within a component
   renderInput(formProps){
     //need to take relevant properties out of formProps and assign onChange and value properties using ES2015 syntax
@@ -35,7 +29,6 @@ class TaskCreate extends React.Component {
     formValues.eventId = this.props.eventId;
     formValues.completed = false;
     this.props.createTask(formValues);
-
   }
 
   render(){
