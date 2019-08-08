@@ -4,5 +4,6 @@ export const FETCH_TASK = 'FETCH_TASK';
 export const FETCH_TASKS = 'FETCH_TASKS';
 export const DELETE_TASK = 'DELETE_TASK';
 export const EDIT_TASK = 'EDIT_TASK';
+export const CHANGE_COMPLETION = 'CHANGE_COMPLETION';
 export const FETCH_TASKS_BY_USER = 'FETCH_TASKS_BY_USER';
 export const FETCH_TASKS_BY_EVENT = 'FETCH_TASKS_BY_EVENT';
