@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchEvent} from '../actions';
+import {fetchTaskByEventId} from '../actions';
 import TaskList from './TaskList';
 
 class Event extends React.Component{
@@ -16,6 +17,9 @@ class Event extends React.Component{
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
+    this.props.fetchTaskByEventId(this.props.eventId).catch(error=>{
+      console.log(error);
+    })
   }
 
 
@@ -41,7 +45,6 @@ class Event extends React.Component{
           </tbody>
 
         </table>
-        <TaskList listOfTaskIds={this.props.tasklist}/>
       </div>
     );
   }
@@ -52,4 +55,4 @@ const mapStateToProps = (state,ownProps) => {
   return state.events[ownProps.eventId];
 }
 
-export default connect(mapStateToProps,{fetchEvent:fetchEvent})(Event);
+export default connect(mapStateToProps,{fetchEvent:fetchEvent, fetchTaskByEventId:fetchTaskByEventId})(Event);

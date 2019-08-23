@@ -11,7 +11,7 @@ class App extends React.Component{
 
   render(){
     return(
-      <TaskCreate eventId="1"></TaskCreate>
+      <Event eventId="1"/>
     )
   }
 

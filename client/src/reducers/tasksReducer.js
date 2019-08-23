@@ -22,6 +22,8 @@ export default (state={},action) => {
       return {...state,[action.payload.id]:action.payload};
     case FETCH_TASKS:
       return {...state,[action.payload.id]:action.payload}
+    case FETCH_TASKS_BY_EVENT:
+      return {...state,[action.payload.id]:action.payload}
     default:
       return state;
   }
