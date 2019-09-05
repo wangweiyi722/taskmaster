@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchEvent} from '../actions';
-import {fetchTaskByEventId} from '../actions';
+import {fetchTasksByEventId} from '../actions';
 import TaskList from './TaskList';
 
 class Event extends React.Component{
@@ -22,6 +22,9 @@ class Event extends React.Component{
     })
   }
 
+  renderTasks(){
+
+  }
 
   render(){
     console.log("event");
@@ -44,6 +47,7 @@ class Event extends React.Component{
             </tr>
           </tbody>
 
+
         </table>
       </div>
     );
@@ -55,4 +59,4 @@ const mapStateToProps = (state,ownProps) => {
   return state.events[ownProps.eventId];
 }
 
-export default connect(mapStateToProps,{fetchEvent:fetchEvent, fetchTaskByEventId:fetchTaskByEventId})(Event);
+export default connect(mapStateToProps,{fetchEvent:fetchEvent, fetchTaskByEventId:fetchTasksByEventId})(Event);

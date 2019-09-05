@@ -46,7 +46,7 @@ export const changeCompletion = (props) => async (dispatch) => {
     payload: response.data
   });
 };
-export const fetchTaskByEventId = (id) => async (dispatch) => {
+export const fetchTasksByEventId = (id) => async (dispatch) => {
   const response = await dbCaller.get(`/tasks?eventId=${id}`);
-  dispatch ({type:EDIT_TASK,payload:response.data});
+  dispatch ({type:FETCH_TASKS_BY_EVENT,payload:response.data});
 }
