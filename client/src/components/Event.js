@@ -45,6 +45,9 @@ class Event extends React.Component{
             <tr>
               <td>test end time:</td><td>{this.props.endTime}</td>
             </tr>
+            <tr>
+              
+            </tr>
           </tbody>
 
 
