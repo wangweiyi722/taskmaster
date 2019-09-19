@@ -10,7 +10,7 @@
     {
       "id": "2",
       "title": "test event2",
-      "time": 1560796026265,
+      "startTime": 1560796026265,
       "endTime": 1560795026265,
       "location": "somewhere2"
     }

@@ -5,9 +5,15 @@ import{CREATE_TASK,FETCH_TASK,FETCH_TASKS,DELETE_TASK,EDIT_TASK,FETCH_TASKS_BY_U
 // Event action creators
 export const fetchEvent = (id) => async (dispatch) => {
   const response = await dbCaller.get(`/events/${id}`);
+  const tasks = await dbCaller.get(`/tasks?eventId=${id}`);
+  console.log("tasks");
+  console.log(tasks);
+  const taskList = tasks.data.map((task) => task.id);
+  console.log("action creator");
+  console.log(taskList);
   dispatch ({
     type:'FETCH_EVENT',
-    payload: response.data
+    payload: {...response.data,...{"taskList":taskList}}
   });
 };
 
@@ -48,5 +54,7 @@ export const changeCompletion = (props) => async (dispatch) => {
 };
 export const fetchTasksByEventId = (id) => async (dispatch) => {
   const response = await dbCaller.get(`/tasks?eventId=${id}`);
+  console.log(response.data);
+
   dispatch ({type:FETCH_TASKS_BY_EVENT,payload:response.data});
 }

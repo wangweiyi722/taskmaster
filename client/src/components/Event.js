@@ -17,18 +17,17 @@ class Event extends React.Component{
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
-    this.props.fetchTaskByEventId(this.props.eventId).catch(error=>{
-      console.log(error);
-    })
+
   }
 
   renderTasks(){
-
+    console.log(this.props.taskList);
   }
 
   render(){
     console.log("event");
     console.log(this.props);
+
     return(
       <div>
         <table>
@@ -46,7 +45,7 @@ class Event extends React.Component{
               <td>test end time:</td><td>{this.props.endTime}</td>
             </tr>
             <tr>
-              
+              <TaskList listOfTaskIds={this.props.taskList}/>
             </tr>
           </tbody>
 
@@ -58,8 +57,10 @@ class Event extends React.Component{
 }
 
 const mapStateToProps = (state,ownProps) => {
+  console.log("event");
+  console.log(state.events[ownProps.eventId]);
 
   return state.events[ownProps.eventId];
 }
 
-export default connect(mapStateToProps,{fetchEvent:fetchEvent, fetchTaskByEventId:fetchTasksByEventId})(Event);
+export default connect(mapStateToProps,{fetchEvent:fetchEvent, fetchTasksByEventId:fetchTasksByEventId})(Event);

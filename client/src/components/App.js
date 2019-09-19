@@ -11,7 +11,11 @@ class App extends React.Component{
 
   render(){
     return(
-      <Event eventId="1"/>
+      <div>
+        <Event eventId="1"/>
+        <Event eventId="2"/>
+      </div>
+
     )
   }
 
