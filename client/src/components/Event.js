@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchEvent} from '../actions';
 import {fetchTasksByEventId} from '../actions';
 import TaskList from './TaskList';
+import {ConvertTime} from '../helpers/ConvertTime';
 
 class Event extends React.Component{
 
@@ -20,9 +21,7 @@ class Event extends React.Component{
 
   }
 
-  renderTasks(){
-    console.log(this.props.taskList);
-  }
+
 
   render(){
     console.log("event");
@@ -39,10 +38,10 @@ class Event extends React.Component{
               <td>test title:</td><td>{this.props.title}</td>
             </tr>
             <tr>
-              <td>test start time:</td><td>{this.props.startTime}</td>
+              <td>test start time:</td><td>{ConvertTime(this.props.startTime)}</td>
             </tr>
             <tr>
-              <td>test end time:</td><td>{this.props.endTime}</td>
+              <td>test end time:</td><td>{ConvertTime(this.props.endTime)}</td>
             </tr>
             <tr>
               <TaskList listOfTaskIds={this.props.taskList}/>
