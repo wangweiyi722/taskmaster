@@ -13,8 +13,9 @@ class Task extends React.Component {
 
   render(){
     console.log(this.props);
+    var style = {display:'inline-block'};
     return (
-      <div>
+      <div className="ui inline-block" style={style}>
         <table>
           <tbody>
             <tr>

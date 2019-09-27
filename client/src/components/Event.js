@@ -43,13 +43,9 @@ class Event extends React.Component{
             <tr>
               <td>test end time:</td><td>{ConvertTime(this.props.endTime)}</td>
             </tr>
-            <tr>
-              <TaskList listOfTaskIds={this.props.taskList}/>
-            </tr>
           </tbody>
-
-
         </table>
+        <TaskList listOfTaskIds={this.props.taskList}/>
       </div>
     );
   }
