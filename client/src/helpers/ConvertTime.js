@@ -4,9 +4,9 @@ export const ConvertTime = (unixTime) => {
   var year = a.getFullYear();
   var month = months[a.getMonth()];
   var date = a.getDate();
-  var hour = a.getHours();
+  var hour = a.getHours()%12;
   var min = a.getMinutes();
-  var sec = a.getSeconds();
-  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+  var amPm = Math.floor(a.getHours()/12)===1?"PM":"AM";
+  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + " " + amPm;
   return time;
 }
