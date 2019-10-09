@@ -22,7 +22,8 @@
       "assignee": "someone@example.com",
       "eventId": "1",
       "completed": false,
-      "id": "1"
+      "id": "1",
+      "comments":[]
     },
     {
       "description": "task2",
@@ -30,7 +31,8 @@
       "assignee": "someone@example.com",
       "completed": false,
       "eventId": "1",
-      "id": "2"
+      "id": "2",
+      "comments":[]
     },
     {
       "id": "3",
@@ -38,7 +40,8 @@
       "deadline": 1568928644,
       "assignee": "someone@example.com",
       "completed": false,
-      "eventId": "2"
+      "eventId": "2",
+      "comments":[]
     },
     {
       "id": "4",
@@ -46,7 +49,8 @@
       "deadline": 1568928644,
       "assignee": "someone@example.com",
       "completed": false,
-      "eventId": "2"
+      "eventId": "2",
+      "comments":[]
     },
     {
       "description": "fewf",
@@ -54,7 +58,8 @@
       "assignee": "wawin@maoinw.com",
       "eventId": "1",
       "completed": false,
-      "id": "pwB6X4A"
+      "id": "pwB6X4A",
+      "comments":[]
     }
   ]
 }

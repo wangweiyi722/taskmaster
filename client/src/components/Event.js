@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchEvent} from '../actions';
 import {fetchTasksByEventId} from '../actions';
+import {selectEvent} from '../actions';
 import TaskList from './TaskList';
 import {ConvertTime} from '../helpers/ConvertTime';
 
@@ -19,16 +20,23 @@ class Event extends React.Component{
       console.log(error);
     });
 
+    this.goToTaskCreationForm = this.goToTaskCreationForm.bind(this);
+
   }
 
-
+  goToTaskCreationForm = (eventId)=>{
+    selectEvent(eventId);
+    console.log("go to task creation");
+    console.log(this.state);
+  }
 
   render(){
     console.log("event");
     console.log(this.props);
 
+    const style = {"border-style":'solid',"border-width":'2px'};
     return(
-      <div>
+      <div style={style}>
         <table>
           <tbody>
             <tr>
@@ -45,6 +53,7 @@ class Event extends React.Component{
             </tr>
           </tbody>
         </table>
+        <button onClick={selectEvent(this.props.id)}>Add Task</button>
         <TaskList listOfTaskIds={this.props.taskList}/>
       </div>
     );
@@ -58,4 +67,4 @@ const mapStateToProps = (state,ownProps) => {
   return state.events[ownProps.eventId];
 }
 
-export default connect(mapStateToProps,{fetchEvent:fetchEvent, fetchTasksByEventId:fetchTasksByEventId})(Event);
+export default connect(mapStateToProps,{fetchEvent:fetchEvent, fetchTasksByEventId:fetchTasksByEventId, selectEvent:selectEvent})(Event);

@@ -1,6 +1,6 @@
 // Action creator
 import dbCaller from '../apis/dbCaller';
-import{CREATE_TASK,FETCH_TASK,FETCH_TASKS,DELETE_TASK,EDIT_TASK,FETCH_TASKS_BY_USER,FETCH_TASKS_BY_EVENT} from './types';
+import{FETCH_EVENT,CREATE_TASK,FETCH_TASK,FETCH_TASKS,DELETE_TASK,EDIT_TASK,FETCH_TASKS_BY_USER,FETCH_TASKS_BY_EVENT,SELECT_EVENT} from './types';
 
 // Event action creators
 export const fetchEvent = (id) => async (dispatch) => {
@@ -12,12 +12,16 @@ export const fetchEvent = (id) => async (dispatch) => {
   console.log("action creator");
   console.log(taskList);
   dispatch ({
-    type:'FETCH_EVENT',
+    type:FETCH_EVENT,
     payload: {...response.data,...{"taskList":taskList}}
   });
 };
 
 
+export const selectEvent = (id) => async (dispatch) => {
+
+  dispatch({type:SELECT_EVENT,payload:{id}});
+};
 
 
 // Task action creators
