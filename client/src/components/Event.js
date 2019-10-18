@@ -4,6 +4,7 @@ import {fetchEvent} from '../actions';
 import {fetchTasksByEventId} from '../actions';
 import {selectEvent} from '../actions';
 import TaskList from './TaskList';
+import TaskCreate from './TaskCreate';
 import {ConvertTime} from '../helpers/ConvertTime';
 
 class Event extends React.Component{
@@ -19,22 +20,13 @@ class Event extends React.Component{
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
-
-    this.goToTaskCreationForm = this.goToTaskCreationForm.bind(this);
-
-  }
-
-  goToTaskCreationForm = (eventId)=>{
-    selectEvent(eventId);
-    console.log("go to task creation");
-    console.log(this.state);
   }
 
   render(){
-    console.log("event");
-    console.log(this.props);
-
+    //console.log("event");
+    //console.log(this.props);
     const style = {"border-style":'solid',"border-width":'2px'};
+
     return(
       <div style={style}>
         <table>
@@ -53,7 +45,8 @@ class Event extends React.Component{
             </tr>
           </tbody>
         </table>
-        <button onClick={selectEvent(this.props.id)}>Add Task</button>
+        <button onClick={()=>this.props.selectEvent(this.props.id)}>Add Task</button>
+
         <TaskList listOfTaskIds={this.props.taskList}/>
       </div>
     );
