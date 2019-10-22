@@ -32,16 +32,9 @@ class TaskCreate extends React.Component {
     this.props.createTask(formValues);
   }
 
-  showForm = () => {
-    console.log("before: "+this.state.show);
-    this.setState({
-      show: true
-    });
-    console.log("after: " + this.state.show);
-  }
 
   render(){
-    //handleSubmit is a helper function from
+    //handleSubmit is a helper function from redux-form library
     return (
       <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form">
         <Field name="description" component={this.renderInput} label="Enter Description"/>

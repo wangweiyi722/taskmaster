@@ -26,6 +26,8 @@ class Event extends React.Component{
     //console.log("event");
     //console.log(this.props);
     const style = {"border-style":'solid',"border-width":'2px'};
+    const hide = {"display":(this.props.selected)?"inline":"none"};
+    const addTaskText = (this.props.selected)?"Cancel":"Add Task";
 
     return(
       <div style={style}>
@@ -45,8 +47,8 @@ class Event extends React.Component{
             </tr>
           </tbody>
         </table>
-        <button onClick={()=>this.props.selectEvent(this.props.id)}>Add Task</button>
-
+        <button onClick={()=>this.props.selectEvent(this.props.id)}>{addTaskText}</button>
+        <div style={hide}><TaskCreate eventId={this.props.id}/></div>
         <TaskList listOfTaskIds={this.props.taskList}/>
       </div>
     );
