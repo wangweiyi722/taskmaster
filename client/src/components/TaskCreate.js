@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
+import {selectEvent} from '../actions';
 import {createTask} from '../actions';
 
 class TaskCreate extends React.Component {
@@ -30,6 +31,7 @@ class TaskCreate extends React.Component {
     formValues.eventId = this.props.eventId;
     formValues.completed = false;
     this.props.createTask(formValues);
+    window.location.reload();
   }
 
 
@@ -51,4 +53,4 @@ const formWrapped = reduxForm({
   form:'TaskCreate'
 })(TaskCreate);
 
-export default connect(null, {createTask})(formWrapped)
+export default connect(null, {createTask,selectEvent})(formWrapped)
