@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const changeActive = (e) => {
   var active = document.getElementsByClassName("item active");
@@ -11,15 +12,15 @@ const changeActive = (e) => {
 const Header = () => {
   return (
     <div class="ui tabular menu">
-    <a class="item" onClick={changeActive}>
-      Bio
-    </a>
-    <a class="item active" onClick={changeActive}>
-      Photos
-    </a>
-    <a class="item" onClick={changeActive}>
-      Photos
-    </a>
+    <Link to="/" class="item" onClick={changeActive}>
+      Home
+    </Link>
+    <Link to="/events" class="item active" onClick={changeActive}>
+      Events
+    </Link>
+    <Link to="/mytasks" class="item" onClick={changeActive}>
+      My Tasks
+    </Link>
   </div>
 );
 }

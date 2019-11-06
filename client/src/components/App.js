@@ -7,15 +7,35 @@ import TaskCreate from "./TaskCreate";
 import Header from "./Header";
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 
+const EventPage = () => {
+  return (
+    <div>
+      <Event eventId="1"/>
+      <Event eventId="2"/>
+    </div>
+  )
+}
+
+const HomePage = () => {
+  return <div>TODO: Make a home page</div>;
+}
+
+const TaskPage = () => {
+  return <div>TODO: Make a page that displays tasks</div>;
+}
 
 class App extends React.Component{
+
 
   render(){
     return(
       <div>
-        <Header></Header>
-        <Event eventId="1"/>
-        <Event eventId="2"/>
+        <BrowserRouter>
+          <Header></Header>
+          <Route path="/" exact component={HomePage}></Route>
+          <Route path="/events" exact component={EventPage}></Route>
+          <Route path="/mytasks" exact component={TaskPage}></Route>
+        </BrowserRouter>
       </div>
 
     )
