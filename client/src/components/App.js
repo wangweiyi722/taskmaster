@@ -5,7 +5,7 @@ import Task from "./Task";
 import TaskList from "./TaskList";
 import TaskCreate from "./TaskCreate";
 import Header from "./Header";
-import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {BrowserRouter, Route, Link, withRouter} from 'react-router-dom';
 
 const EventPage = () => {
   return (
@@ -28,6 +28,8 @@ class App extends React.Component{
 
 
   render(){
+    console.log("Looking for browser route");
+    console.log(this.props);
     return(
       <div>
         <BrowserRouter>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link,withRouter} from 'react-router-dom';
 
 const changeActive = (e) => {
   var active = document.getElementsByClassName("item active");
