@@ -10,6 +10,7 @@ import {BrowserRouter, Route, Link, withRouter} from 'react-router-dom';
 const EventPage = () => {
   return (
     <div>
+      <Header activeItem="eventsRoute"></Header>
       <Event eventId="1"/>
       <Event eventId="2"/>
     </div>
@@ -17,11 +18,17 @@ const EventPage = () => {
 }
 
 const HomePage = () => {
-  return <div>TODO: Make a home page</div>;
+  return (<div>
+    <Header activeItem="homeRoute"></Header>
+    TODO: Make a home page
+  </div>);
 }
 
 const TaskPage = () => {
-  return <div>TODO: Make a page that displays tasks</div>;
+  return (<div>
+    <Header activeItem="myTasksRoute"></Header>
+    TODO: Make a tasks page
+  </div>);
 }
 
 class App extends React.Component{
@@ -33,7 +40,6 @@ class App extends React.Component{
     return(
       <div>
         <BrowserRouter>
-          <Header></Header>
           <Route path="/" exact component={HomePage}></Route>
           <Route path="/events" exact component={EventPage}></Route>
           <Route path="/mytasks" exact component={TaskPage}></Route>
