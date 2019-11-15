@@ -9,3 +9,5 @@ export const FETCH_TASKS_BY_USER = 'FETCH_TASKS_BY_USER';
 export const FETCH_TASKS_BY_EVENT = 'FETCH_TASKS_BY_EVENT';
 export const FETCH_EVENT = 'FETCH_EVENT';
 export const SELECT_EVENT = 'SELECT_EVENT';
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_OUT = 'SIGN_OUT';
