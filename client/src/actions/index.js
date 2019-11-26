@@ -1,22 +1,21 @@
 // Action creator
 import dbCaller from '../apis/dbCaller';
-import{FETCH_EVENT,CREATE_TASK,FETCH_TASK,FETCH_TASKS,DELETE_TASK,EDIT_TASK,FETCH_TASKS_BY_USER,FETCH_TASKS_BY_EVENT,SELECT_EVENT,SIGN_IN,SIGN_OUT} from './types';
+import{FETCH_EVENT,CREATE_TASK,CREATE_EVENT,FETCH_TASK,FETCH_TASKS,DELETE_TASK,EDIT_TASK,FETCH_TASKS_BY_USER,FETCH_TASKS_BY_EVENT,SELECT_EVENT,SIGN_IN,SIGN_OUT} from './types';
 
 // Event action creators
 export const fetchEvent = (id) => async (dispatch) => {
   const response = await dbCaller.get(`/events/${id}`);
   const tasks = await dbCaller.get(`/tasks?eventId=${id}`);
-  console.log("tasks");
-  console.log(tasks);
   const taskList = tasks.data.map((task) => task.id);
-  console.log("action creator");
-  console.log(taskList);
   dispatch ({
     type:FETCH_EVENT,
     payload: {...response.data,...{"taskList":taskList}}
   });
 };
-
+export const createEvent = (formValues) => async (dispatch) => {
+  const response = await dbCaller.post('/events',formValues);
+  dispatch({type:CREATE_EVENT,payload:response.data});
+};
 
 export const selectEvent = (id) => async (dispatch) => {
 

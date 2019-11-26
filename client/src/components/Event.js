@@ -28,6 +28,12 @@ class Event extends React.Component{
     const style = {"border-style":'solid',"border-width":'2px'};
     const hide = {"display":(this.props.selected)?"inline":"none"};
     const addTaskText = (this.props.selected)?"Cancel":"Add Task";
+    console.log("event props");
+    console.log(this.props);
+    if (this.props.title==undefined){
+      console.log('loading');
+      return "loading";
+    }
 
     return(
       <div style={style}>
@@ -45,6 +51,10 @@ class Event extends React.Component{
             <tr>
               <td>test end time:</td><td>{ConvertTime(this.props.endTime)}</td>
             </tr>
+            <tr>
+              <td>test creator:</td><td>{this.props.creator.firstName}</td>
+            </tr>
+
           </tbody>
         </table>
         <button onClick={()=>this.props.selectEvent(this.props.id)}>{addTaskText}</button>
@@ -56,8 +66,6 @@ class Event extends React.Component{
 }
 
 const mapStateToProps = (state,ownProps) => {
-  console.log("event");
-  console.log(state.events[ownProps.eventId]);
 
   return state.events[ownProps.eventId];
 }

@@ -5,14 +5,26 @@
       "title": "test event",
       "startTime": 1568928644,
       "endTime": 1568928644,
-      "location": "somewhere"
+      "location": "somewhere",
+      "creator": {
+        "firstName":"Bruce",
+        "lastName":"Wayne",
+        "email":"wangweiyi722@gmail.com"        
+      },
+      "contacts":[]
     },
     {
       "id": "2",
       "title": "test event2",
       "startTime": 1568928644,
       "endTime": 1568928644,
-      "location": "somewhere2"
+      "location": "somewhere2",
+      "creator": {
+        "firstName":"Alex",
+        "lastName":"Smith",
+        "email":"wangweiyi722@gmail.com"
+      },
+      "contacts":[]
     }
   ],
   "tasks": [
@@ -116,6 +128,14 @@
       "eventId": "1",
       "completed": true,
       "id": "kGJdi4r"
+    },
+    {
+      "description": "test create 6",
+      "deadline": "1234251",
+      "assignee": "wawin@maoinw.com",
+      "eventId": "2",
+      "completed": false,
+      "id": "NNtnngU"
     }
   ]
 }

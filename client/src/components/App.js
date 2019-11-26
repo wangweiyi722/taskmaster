@@ -35,8 +35,7 @@ class App extends React.Component{
 
 
   render(){
-    console.log("Looking for browser route");
-    console.log(this.props);
+
     return(
       <div>
         <BrowserRouter>

@@ -11,3 +11,4 @@ export const FETCH_EVENT = 'FETCH_EVENT';
 export const SELECT_EVENT = 'SELECT_EVENT';
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
+export const CREATE_EVENT = 'CREATE_EVENT';
