@@ -27,8 +27,13 @@ class EventCreate extends React.Component {
   onSubmit = (formValues)=>{
     console.log(formValues);
     //Add the eventID that was passed in as a prop from App.js as a new key in formValues
-    formValues.eventId = this.props.eventId;
     formValues.completed = false;
+    formValues.contacts = [];
+    formValues.creator = {
+      firstName:"Bruce",
+      lastName:"Wayne",
+      email:"wangweiyi722@gmail.com"        
+    }
     this.props.createEvent(formValues);
   }
 
@@ -37,8 +42,10 @@ class EventCreate extends React.Component {
     //handleSubmit is a helper function from redux-form library
     return (
       <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form">
-        <Field name="description" component={this.renderInput} label="Enter Description"/>
-        <Field name="deadline" component={this.renderInput} label="Enter Deadline"/>
+        <Field name="title" component={this.renderInput} label="Title"/>
+        <Field name="startTime" component={this.renderInput} label="Start Time"/>
+        <Field name="endTime" component={this.renderInput} label="End Time"/>
+        <Field name="location" component={this.renderInput} label="Enter Location"/>
         <Field name="assignee" component={this.renderInput} label="Enter Assignee"/>
         <button className="ui button primary">Submit</button>
       </form>
