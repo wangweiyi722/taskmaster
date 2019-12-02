@@ -62,9 +62,10 @@ export const fetchTasksByEventId = (id) => async (dispatch) => {
   dispatch ({type:FETCH_TASKS_BY_EVENT,payload:response.data});
 }
 
-export const signIn = () => {
+export const signIn = (userId) => {
   return {
-    type: SIGN_IN
+    type: SIGN_IN,
+    payload: userId
   }
 }
 export const signOut = () => {

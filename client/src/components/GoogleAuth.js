@@ -34,7 +34,9 @@ class GoogleAuth extends React.Component{
 
     //Call the appropriate action creator that we added a prop in connect function.
     if (isSignedIn){
-      this.props.signIn();
+
+      //pass in user that is signed in
+      this.props.signIn(this.auth.currentUser.get().getId());
     }
     else{
       this.props.signOut();
