@@ -3,8 +3,7 @@ import React from "react";
 import Task from './Task';
 
 const TaskList = (props) => {
-  console.log("props");
-  console.log(props);
+
   if(!props.listOfTaskIds){
     return(<div>loading</div>);
   }

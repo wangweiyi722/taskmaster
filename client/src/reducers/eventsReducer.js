@@ -9,8 +9,7 @@ export default (state={},action) => {
       //payload is the response returned from the API
       return {...state,[action.payload.id]:action.payload};
     case SELECT_EVENT:
-      console.log("select event action")
-      console.log(state[action.payload.id]);
+
       const newSelectionState = !state[action.payload.id].selected;
       return {...state,[action.payload.id]:{...state[action.payload.id],"selected":newSelectionState}};
     default:

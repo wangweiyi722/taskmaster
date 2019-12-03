@@ -25,7 +25,7 @@ class Event extends React.Component{
   render(){
     //console.log("event");
     //console.log(this.props);
-    const style = {"border-style":'solid',"border-width":'2px'};
+    const style = {borderStyle:'solid',borderWidth:'2px'};
     const hide = {"display":(this.props.selected)?"inline":"none"};
     const addTaskText = (this.props.selected)?"Cancel":"Add Task";
     console.log("event props");
@@ -66,7 +66,9 @@ class Event extends React.Component{
 }
 
 const mapStateToProps = (state,ownProps) => {
-
+  if (!state.events[ownProps.eventId]){
+    return {};
+  }
   return state.events[ownProps.eventId];
 }
 

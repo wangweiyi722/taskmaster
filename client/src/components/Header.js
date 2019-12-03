@@ -4,9 +4,7 @@ import GoogleAuth from './GoogleAuth';
 
 const changeActive = (e) => {
   var active = document.getElementsByClassName("item active");
-  console.log(active);
   active[0].className="item";
-  console.log(e.target.className);
   e.target.className="item active";
 }
 
@@ -22,7 +20,6 @@ const Header = (props) => {
 
   var activeIndex;
   menuComponents.forEach((item,index)=>{
-    console.log("item ids");
     if(props.activeItem==item.props.id){
       activeIndex = index;
     }
@@ -64,7 +61,7 @@ const Header = (props) => {
     </div>)
   }
 */
-  return (<div class="ui tabular menu">
+  return (<div className="ui tabular menu">
     {menuComponents}
   </div>);
 }

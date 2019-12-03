@@ -12,7 +12,6 @@ class Task extends React.Component {
   }
 
   render(){
-    console.log(this.props);
     var style = {display:'inline-block'};
     return (
       <div className="ui inline-block" style={style}>
@@ -37,7 +36,9 @@ class Task extends React.Component {
 
 
 const mapStateToProps = (state,ownProps) => {
-
+  if (!state.tasks[ownProps.taskId]){
+    return {};
+  }
   return state.tasks[ownProps.taskId];
 }
 
