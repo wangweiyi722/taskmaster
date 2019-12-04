@@ -15,6 +15,7 @@ const Header = (props) => {
     <Link to="/" id="homeRoute" className="item">Home</Link>,
     <Link to="/events" id="eventsRoute" className="item">Events</Link>,
     <Link to="/mytasks" id="myTasksRoute" className="item">My Tasks</Link>,
+    <Link to="/eventcreate" id="myEventCreateRoute" className="item">New Event</Link>,
     <GoogleAuth></GoogleAuth>
   ]
 

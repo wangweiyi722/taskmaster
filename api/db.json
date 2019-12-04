@@ -7,11 +7,11 @@
       "endTime": 1568928644,
       "location": "somewhere",
       "creator": {
-        "firstName":"Bruce",
-        "lastName":"Wayne",
-        "email":"wangweiyi722@gmail.com"        
+        "firstName": "Bruce",
+        "lastName": "Wayne",
+        "email": "wangweiyi722@gmail.com"
       },
-      "contacts":[]
+      "contacts": []
     },
     {
       "id": "2",
@@ -20,11 +20,11 @@
       "endTime": 1568928644,
       "location": "somewhere2",
       "creator": {
-        "firstName":"Alex",
-        "lastName":"Smith",
-        "email":"wangweiyi722@gmail.com"
+        "firstName": "Alex",
+        "lastName": "Smith",
+        "email": "wangweiyi722@gmail.com"
       },
-      "contacts":[]
+      "contacts": []
     }
   ],
   "tasks": [
@@ -33,9 +33,8 @@
       "deadline": 1568928644,
       "assignee": "someone@example.com",
       "eventId": "1",
-      "completed": false,
-      "id": "1",
-      "comments": []
+      "completed": true,
+      "id": "1"
     },
     {
       "description": "task2",

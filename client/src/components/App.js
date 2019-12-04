@@ -1,5 +1,6 @@
 import React from 'react';
 import Event from "./Event";
+import EventCreate from "./EventCreate";
 import EventList from "./EventList";
 import Task from "./Task";
 import TaskList from "./TaskList";
@@ -31,6 +32,13 @@ const TaskPage = () => {
   </div>);
 }
 
+const EventCreatePage = () => {
+  return (<div>
+    <Header activeItem="myEventCreateRoute"></Header>
+    <EventCreate/>
+  </div>);
+}
+
 class App extends React.Component{
 
 
@@ -42,6 +50,7 @@ class App extends React.Component{
           <Route path="/" exact component={HomePage}></Route>
           <Route path="/events" exact component={EventPage}></Route>
           <Route path="/mytasks" exact component={TaskPage}></Route>
+          <Route path="/eventcreate" exact component={EventCreatePage}></Route>
         </BrowserRouter>
       </div>
 

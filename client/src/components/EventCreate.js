@@ -32,7 +32,7 @@ class EventCreate extends React.Component {
     formValues.creator = {
       firstName:"Bruce",
       lastName:"Wayne",
-      email:"wangweiyi722@gmail.com"        
+      email:"wangweiyi722@gmail.com"
     }
     this.props.createEvent(formValues);
   }
