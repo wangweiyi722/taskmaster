@@ -29,6 +29,8 @@ class EventCreate extends React.Component {
     //Add the eventID that was passed in as a prop from App.js as a new key in formValues
     formValues.contacts = [];
     this.props.createEvent(formValues);
+    //
+    //TODO: confirmation popup message
   }
 
 
