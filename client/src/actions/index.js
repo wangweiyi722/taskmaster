@@ -12,8 +12,18 @@ export const fetchEvent = (id) => async (dispatch) => {
     payload: {...response.data,...{"taskList":taskList}}
   });
 };
-export const createEvent = (formValues) => async (dispatch) => {
-  const response = await dbCaller.post('/events',formValues);
+export const createEvent = (formValues) => async (dispatch,getState) => {
+  const id = getState().auth.user.id;
+  const firstName = getState().auth.user.firstName;
+  const lastName = getState().auth.user.lastName;
+  const email = getState().auth.user.email;
+  const user = {
+    id:id,
+    firstName:firstName,
+    lastName:lastName,
+    email:email
+  };
+  const response = await dbCaller.post('/events',{...formValues,user});
   dispatch({type:CREATE_EVENT,payload:response.data});
 };
 
