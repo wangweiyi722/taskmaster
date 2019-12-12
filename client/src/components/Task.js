@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchTask} from '../actions';
 import {changeCompletion} from '../actions';
+import {ConvertTime} from '../helpers/ConvertTime';
 
 class Task extends React.Component {
 
@@ -22,6 +23,9 @@ class Task extends React.Component {
             </tr>
             <tr>
               <td>Description:</td><td>{this.props.description}</td>
+            </tr>
+            <tr>
+              <td>Deadline:</td><td>{ConvertTime(this.props.deadline)}</td>
             </tr>
             <tr>
               <td>Completed:</td><td>{this.props.completed?"yes":"no"}</td>

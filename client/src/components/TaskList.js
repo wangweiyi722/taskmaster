@@ -10,6 +10,6 @@ const TaskList = (props) => {
   const tasks = props.listOfTaskIds.map((task) => {
     return <Task key={task} taskId={task}/>;
   });
-  return <div className="ui divided items inline-block">{tasks}</div>
+  return <div className="ui divided" style={{"overflow":"scroll","white-space":"nowrap"}}>{tasks}</div>
 }
 export default TaskList;

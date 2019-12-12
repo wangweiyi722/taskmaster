@@ -9,6 +9,10 @@ import {ConvertTime} from '../helpers/ConvertTime';
 
 class Event extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.state={showTaskList:false}
+  }
   //Event properties:
   //id
   //title
@@ -17,6 +21,7 @@ class Event extends React.Component{
   //location
   //task list
   componentDidMount(){
+
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
@@ -28,8 +33,8 @@ class Event extends React.Component{
     const style = {borderStyle:'solid',borderWidth:'2px'};
     const hide = {"display":(this.props.selected)?"inline":"none"};
     const addTaskText = (this.props.selected)?"Cancel":"Add Task";
-    console.log("event props");
-    console.log(this.props);
+    //console.log("event props");
+    //console.log(this.props);
     if (this.props.title==undefined){
       console.log('loading');
       return "loading";
@@ -52,14 +57,25 @@ class Event extends React.Component{
               <td>test end time:</td><td>{ConvertTime(this.props.endTime)}</td>
             </tr>
             <tr>
-              <td>test creator:</td><td>{this.props.creator.firstName}</td>
+              <td>test creator:</td><td>{this.props.creator.firstName+" "+this.props.creator.lastName}</td>
             </tr>
-
+            <tr>
+              <td>test email:</td><td>{this.props.creator.email}</td>
+            </tr>
           </tbody>
         </table>
+
+        <button onClick={()=>{
+            console.log(this.setState({showTaskList:!this.state.showTaskList}));
+          }
+        }>Show task list
+        </button>
+        <div style={{"display":this.state.showTaskList?'inline':'none'}}>
+          <TaskList listOfTaskIds={this.props.taskList}/>
+        </div>
+
         <button onClick={()=>this.props.selectEvent(this.props.id)}>{addTaskText}</button>
         <div style={hide}><TaskCreate eventId={this.props.id}/></div>
-        <TaskList listOfTaskIds={this.props.taskList}/>
       </div>
     );
   }
