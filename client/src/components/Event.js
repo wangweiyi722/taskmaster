@@ -68,7 +68,7 @@ class Event extends React.Component{
         <button onClick={()=>{
             console.log(this.setState({showTaskList:!this.state.showTaskList}));
           }
-        }>Show task list
+        }>{this.state.showTaskList?"hide":"show"} task list
         </button>
         <div style={{"display":this.state.showTaskList?'inline':'none'}}>
           <TaskList listOfTaskIds={this.props.taskList}/>

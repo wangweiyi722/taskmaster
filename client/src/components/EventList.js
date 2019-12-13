@@ -1,18 +1,40 @@
 import React from "react";
-
+import {connect} from 'react-redux';
+import {fetchEvents} from '../actions';
 import Event from './Event';
 
-const EventList = (props) => {
+class EventList extends React.Component {
 
-  if(!props.listOfEventIds){
-    return <div>No Events</div>
+  componentDidMount(){
+    this.props.fetchEvents().catch(error=>{
+      console.log(error);
+    });;
   }
-  else{
-    const events = props.listOfEventIds.map((event) => {
-      return <Event key={event} eventId={event}/>;
-    });
-    return <div className="ui divided items">{events}</div>
+
+  renderList(){
+    console.log(this.props);
+    if (!this.props.events){
+      return <div>none</div>
+    }
+    else{
+      return this.props.events.map(event=>{
+        return (
+            <div>{event.id}</div>
+        )
+      })
+
+    }
+
+  }
+
+  render(){
+    return <div>{this.renderList()}</div>
   }
 
 }
-export default EventList;
+
+const mapStateToProps = (state)=>{
+  return {events: Object.values(state.events)}
+}
+
+export default connect(mapStateToProps,{fetchEvents:fetchEvents})(EventList);

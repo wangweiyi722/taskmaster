@@ -6,15 +6,16 @@ import Task from "./Task";
 import TaskList from "./TaskList";
 import TaskCreate from "./TaskCreate";
 import Header from "./Header";
-import {BrowserRouter, Route, Link, withRouter} from 'react-router-dom';
+import {Router, Route, Link, withRouter} from 'react-router-dom';
+import history from '../history';
 
 const EventPage = () => {
   return (
     <div>
       <Header activeItem="eventsRoute"></Header>
-      <Event eventId="1"/>
-      <Event eventId="2"/>
+      <EventList/>
     </div>
+    
   )
 }
 
@@ -46,12 +47,12 @@ class App extends React.Component{
 
     return(
       <div>
-        <BrowserRouter>
+        <Router history={history}>
           <Route path="/" exact component={HomePage}></Route>
           <Route path="/events" exact component={EventPage}></Route>
           <Route path="/mytasks" exact component={TaskPage}></Route>
           <Route path="/eventcreate" exact component={EventCreatePage}></Route>
-        </BrowserRouter>
+        </Router>
       </div>
 
     )

@@ -1,6 +1,7 @@
 // Action creator
 import dbCaller from '../apis/dbCaller';
-import{FETCH_EVENT,CREATE_TASK,CREATE_EVENT,FETCH_TASK,FETCH_TASKS,DELETE_TASK,EDIT_TASK,FETCH_TASKS_BY_USER,FETCH_TASKS_BY_EVENT,SELECT_EVENT,SIGN_IN,SIGN_OUT} from './types';
+import{FETCH_EVENT,FETCH_EVENTS,CREATE_TASK,CREATE_EVENT,FETCH_TASK,FETCH_TASKS,DELETE_TASK,EDIT_TASK,FETCH_TASKS_BY_USER,FETCH_TASKS_BY_EVENT,SELECT_EVENT,SIGN_IN,SIGN_OUT} from './types';
+import history from '../history';
 
 // Event action creators
 export const fetchEvent = (id) => async (dispatch) => {
@@ -12,6 +13,10 @@ export const fetchEvent = (id) => async (dispatch) => {
     payload: {...response.data,...{"taskList":taskList}}
   });
 };
+export const fetchEvents = () => async (dispatch) => {
+  const response = await dbCaller.get('/events');
+  dispatch({type:FETCH_EVENTS,payload:response.data});
+}
 export const createEvent = (formValues) => async (dispatch,getState) => {
   const id = getState().auth.user.id;
   const firstName = getState().auth.user.firstName;
@@ -25,6 +30,7 @@ export const createEvent = (formValues) => async (dispatch,getState) => {
   };
   const response = await dbCaller.post('/events',{...formValues,user});
   dispatch({type:CREATE_EVENT,payload:response.data});
+  history.push("/events");
 };
 
 export const selectEvent = (id) => async (dispatch) => {
@@ -59,7 +65,7 @@ export const deleteTask = (id) => async (dispatch) => {
   dispatch ({type:DELETE_TASK,payload:id});
 }
 export const changeCompletion = (props) => async (dispatch) => {
-  const response = await dbCaller.put(`/tasks/${props.id}`,{"description":props.description,"deadline":props.deadline,"assignee":props.assignee,"eventId":props.eventId,"completed":!props.completed});
+  const response = await dbCaller.patch(`/tasks/${props.id}`,{"completed":!props.completed});
   dispatch ({
     type:'CHANGE_COMPLETION',
     payload: response.data

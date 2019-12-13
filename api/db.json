@@ -39,6 +39,20 @@
         "email": "wangweiyi722@gmail.com"
       },
       "id": "V0S91_3"
+    },
+    {
+      "title": "test history",
+      "startTime": "1928329819",
+      "endTime": "1928938198",
+      "location": "aonaonw",
+      "contacts": [],
+      "user": {
+        "id": "110546616692795357459",
+        "firstName": "Weiyi",
+        "lastName": "Wang",
+        "email": "wangweiyi722@gmail.com"
+      },
+      "id": "l0qWS8a"
     }
   ],
   "tasks": [
@@ -47,14 +61,15 @@
       "deadline": 1568928644,
       "assignee": "someone@example.com",
       "eventId": "1",
-      "completed": true,
-      "id": "1"
+      "completed": false,
+      "id": "1",
+      "comments": []
     },
     {
       "description": "task2",
       "deadline": 1568928644,
       "assignee": "someone@example.com",
-      "completed": false,
+      "completed": true,
       "eventId": "1",
       "id": "2",
       "comments": []
