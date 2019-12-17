@@ -1,6 +1,9 @@
 import React from "react";
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {fetchEvents} from '../actions';
+import {tableRowStyling, tableHeaderStyling} from '../styles';
+import {ConvertTime} from "../helpers/ConvertTime";
 import Event from './Event';
 
 class EventList extends React.Component {
@@ -8,10 +11,12 @@ class EventList extends React.Component {
   componentDidMount(){
     this.props.fetchEvents().catch(error=>{
       console.log(error);
-    });;
+    });
   }
 
-  renderList(){
+
+
+  renderList = () => {
     console.log(this.props);
     if (!this.props.events){
       return <div>none</div>
@@ -19,7 +24,9 @@ class EventList extends React.Component {
     else{
       return this.props.events.map(event=>{
         return (
-            <div>{event.id}</div>
+            <tr className="eventListTableRow">
+              <td onMouseOver={null}><Link to={`/events/${event.id}`}>{event.title}</Link></td><td>{ConvertTime(event.startTime)}</td><td>{event.location}</td><td>{event.assignee}</td>
+            </tr>
         )
       })
 
@@ -28,7 +35,12 @@ class EventList extends React.Component {
   }
 
   render(){
-    return <div>{this.renderList()}</div>
+    return (<table style={{width:'100%',borderCollapse:'collapse'}}>
+      <tr style={tableHeaderStyling}>
+        <th>Event</th><th>Date</th><th>Location</th><th>In Charge</th>
+      </tr>
+      {this.renderList()}
+    </table>)
   }
 
 }

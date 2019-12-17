@@ -6,12 +6,8 @@
       "startTime": 1568928644,
       "endTime": 1568928644,
       "location": "somewhere",
-      "creator": {
-        "firstName": "Bruce",
-        "lastName": "Wayne",
-        "email": "wangweiyi722@gmail.com"
-      },
-      "contacts": []
+      "assignee": "wangweiyi722@gmail.com",
+      "contacts": ["wangweiyi722@gmail.com"]
     },
     {
       "id": "2",
@@ -19,25 +15,16 @@
       "startTime": 1568928644,
       "endTime": 1568928644,
       "location": "somewhere2",
-      "creator": {
-        "firstName": "Alex",
-        "lastName": "Smith",
-        "email": "wangweiyi722@gmail.com"
-      },
-      "contacts": []
+      "assignee": "wangweiyi722@gmail.com",
+      "contacts": ["wangweiyi722@gmail.com"]
     },
     {
       "title": "event create test 1",
       "startTime": "123456789123",
       "endTime": "123456789123",
       "location": "abcdef",
-      "contacts": [],
-      "user": {
-        "id": "110546616692795357459",
-        "firstName": "Weiyi",
-        "lastName": "Wang",
-        "email": "wangweiyi722@gmail.com"
-      },
+      "contacts": ["wangweiyi722@gmail.com"],
+      "assignee": "wangweiyi722@gmail.com",
       "id": "V0S91_3"
     },
     {
@@ -45,14 +32,20 @@
       "startTime": "1928329819",
       "endTime": "1928938198",
       "location": "aonaonw",
-      "contacts": [],
-      "user": {
-        "id": "110546616692795357459",
-        "firstName": "Weiyi",
-        "lastName": "Wang",
-        "email": "wangweiyi722@gmail.com"
-      },
+      "contacts": ["wangweiyi722@gmail.com"],
+      "assignee": "wangweiyi722@gmail.com",
       "id": "l0qWS8a"
+    },
+    {
+      "title": "test event create 6",
+      "startTime": "1234567819",
+      "endTime": "1829347919",
+      "location": "abcdef",
+      "assignee": "wangweiyi722@gmail.com",
+      "contacts": [
+        "wangweiyi722@gmail.com"
+      ],
+      "id": "GeW02A7"
     }
   ],
   "tasks": [

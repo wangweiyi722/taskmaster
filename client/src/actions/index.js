@@ -18,6 +18,7 @@ export const fetchEvents = () => async (dispatch) => {
   dispatch({type:FETCH_EVENTS,payload:response.data});
 }
 export const createEvent = (formValues) => async (dispatch,getState) => {
+  /*
   const id = getState().auth.user.id;
   const firstName = getState().auth.user.firstName;
   const lastName = getState().auth.user.lastName;
@@ -28,7 +29,8 @@ export const createEvent = (formValues) => async (dispatch,getState) => {
     lastName:lastName,
     email:email
   };
-  const response = await dbCaller.post('/events',{...formValues,user});
+  */
+  const response = await dbCaller.post('/events',{...formValues});
   dispatch({type:CREATE_EVENT,payload:response.data});
   history.push("/events");
 };

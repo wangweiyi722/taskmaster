@@ -27,7 +27,7 @@ class EventCreate extends React.Component {
   onSubmit = (formValues)=>{
     console.log(formValues);
     //Add the eventID that was passed in as a prop from App.js as a new key in formValues
-    formValues.contacts = [];
+    formValues.contacts = [formValues.assignee];
     this.props.createEvent(formValues);
     //
     //TODO: confirmation popup message
@@ -42,6 +42,7 @@ class EventCreate extends React.Component {
         <Field name="startTime" component={this.renderInput} label="Start Time"/>
         <Field name="endTime" component={this.renderInput} label="End Time"/>
         <Field name="location" component={this.renderInput} label="Enter Location"/>
+        <Field name="assignee" component={this.renderInput} label="Enter Assignee"/>
         <button className="ui button primary">Submit</button>
       </form>
     );

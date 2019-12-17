@@ -15,7 +15,7 @@ const EventPage = () => {
       <Header activeItem="eventsRoute"></Header>
       <EventList/>
     </div>
-    
+
   )
 }
 
@@ -40,6 +40,10 @@ const EventCreatePage = () => {
   </div>);
 }
 
+const SingleEventPage = (props) => {
+  return <Event eventId={props.id}/>
+}
+
 class App extends React.Component{
 
 
@@ -52,6 +56,7 @@ class App extends React.Component{
           <Route path="/events" exact component={EventPage}></Route>
           <Route path="/mytasks" exact component={TaskPage}></Route>
           <Route path="/eventcreate" exact component={EventCreatePage}></Route>
+          <Route path="/events/:id" exact component={SingleEventPage}/>
         </Router>
       </div>
 
