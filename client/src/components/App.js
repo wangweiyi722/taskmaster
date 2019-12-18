@@ -41,7 +41,14 @@ const EventCreatePage = () => {
 }
 
 const SingleEventPage = (props) => {
-  return <Event eventId={props.id}/>
+  console.log("props fed through router");
+  console.log(props);
+  return (<div>
+    <Header activeItem="eventsRoute"></Header>
+    <Link to={`/events`}>Back to events list</Link>
+    <Event eventId={props.match.params.id}/>
+  </div>
+  )
 }
 
 class App extends React.Component{
@@ -56,7 +63,7 @@ class App extends React.Component{
           <Route path="/events" exact component={EventPage}></Route>
           <Route path="/mytasks" exact component={TaskPage}></Route>
           <Route path="/eventcreate" exact component={EventCreatePage}></Route>
-          <Route path="/events/:id" exact component={SingleEventPage}/>
+          <Route path="/events/:id" exact component={SingleEventPage}></Route>
         </Router>
       </div>
 

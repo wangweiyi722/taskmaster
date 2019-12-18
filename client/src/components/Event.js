@@ -21,7 +21,6 @@ class Event extends React.Component{
   //location
   //task list
   componentDidMount(){
-
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
@@ -36,7 +35,6 @@ class Event extends React.Component{
     //console.log("event props");
     //console.log(this.props);
     if (this.props.title==undefined){
-      console.log('loading');
       return "loading";
     }
 
@@ -57,10 +55,7 @@ class Event extends React.Component{
               <td>test end time:</td><td>{ConvertTime(this.props.endTime)}</td>
             </tr>
             <tr>
-              <td>test creator:</td><td>{this.props.creator.firstName+" "+this.props.creator.lastName}</td>
-            </tr>
-            <tr>
-              <td>test email:</td><td>{this.props.creator.email}</td>
+              <td>test email:</td><td>{this.props.assignee}</td>
             </tr>
           </tbody>
         </table>
