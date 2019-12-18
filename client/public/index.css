@@ -1,0 +1,13 @@
+.eventListTableRow{
+  padding:10px;
+  margin-bottom:20px;
+  border-bottom:gray 1px solid
+}
+
+.eventListTableRow:hover{
+  background:gray
+}
+
+td{
+  padding:15px
+}
