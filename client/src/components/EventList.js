@@ -35,8 +35,8 @@ class EventList extends React.Component {
   }
 
   render(){
-    return (<table style={{width:'100%',borderCollapse:'collapse'}}>
-      <tr style={tableHeaderStyling}>
+    return (<table>
+      <tr>
         <th>Event</th><th>Date</th><th>Location</th><th>In Charge</th>
       </tr>
       {this.renderList()}

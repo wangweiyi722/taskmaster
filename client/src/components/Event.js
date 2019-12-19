@@ -29,7 +29,6 @@ class Event extends React.Component{
   render(){
     //console.log("event");
     //console.log(this.props);
-    const style = {borderStyle:'solid',borderWidth:'2px'};
     const hide = {"display":(this.props.selected)?"inline":"none"};
     const addTaskText = (this.props.selected)?"Cancel":"Add Task";
     //console.log("event props");
@@ -39,29 +38,23 @@ class Event extends React.Component{
     }
 
     return(
-      <div style={style}>
+      <div className="event">
+        <div className="eventHeader" style={{"paddingBottom":"20px"}}>
+          <h1>Event Detail</h1>
+        </div>
         <table>
           <tbody>
             <tr>
-              <td>test id:</td><td>{this.props.id}</td>
+              <td>Title</td><td>{this.props.title}</td><td>In Charge</td><td>{this.props.assignee}</td>
             </tr>
             <tr>
-              <td>test title:</td><td>{this.props.title}</td>
-            </tr>
-            <tr>
-              <td>test start time:</td><td>{ConvertTime(this.props.startTime)}</td>
-            </tr>
-            <tr>
-              <td>test end time:</td><td>{ConvertTime(this.props.endTime)}</td>
-            </tr>
-            <tr>
-              <td>test email:</td><td>{this.props.assignee}</td>
+              <td>Start Time</td><td>{ConvertTime(this.props.startTime)}</td><td>End Time</td><td>{ConvertTime(this.props.endTime)}</td>
             </tr>
           </tbody>
         </table>
 
-        <button onClick={()=>{
-            console.log(this.setState({showTaskList:!this.state.showTaskList}));
+        <button className="showTaskList" onClick={()=>{
+            this.setState({showTaskList:!this.state.showTaskList});
           }
         }>{this.state.showTaskList?"hide":"show"} task list
         </button>

@@ -1,14 +1,55 @@
-.eventListTableRow{
+.eventListTableRow {
   padding:10px;
   margin-bottom:20px;
-  border-bottom:gray 1px solid
+  border-bottom:lightgray 1px solid
 }
 
 .eventListTableRow:hover{
   background:gray
 }
 
+table{
+  width:100%;
+  border-collapse:collapse
+}
+
 td{
   padding:15px;
   font-size:140%
+}
+
+tr{
+  padding:10px;
+  margin-bottom:20px;
+  border-bottom:lightgray 1px solid
+}
+
+th{
+  color:blue;
+  text:bold;
+  width:auto;
+  border-bottom:2px solid black
+}
+
+.eventHeader{
+  padding:20px;
+}
+
+	/* improve visual readability for IE8 and below */
+
+	/*  Define the background color for all the ODD table columns  */
+tr td:nth-child(odd){
+  text-align:right;
+  color:gray
+}
+
+.showTaskList{
+  padding-top:20px;
+  padding-bottom:20px;
+  width:100%;
+  font-size:180%;
+  border-radius:2px;
+  border:none;
+  text-align:left;
+  background-color:white
 }

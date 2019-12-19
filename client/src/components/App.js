@@ -41,11 +41,10 @@ const EventCreatePage = () => {
 }
 
 const SingleEventPage = (props) => {
-  console.log("props fed through router");
-  console.log(props);
+
   return (<div>
     <Header activeItem="eventsRoute"></Header>
-    <Link to={`/events`}>Back to events list</Link>
+    <Link to={`/events`}><i class="angle left icon"></i> Back to events list</Link>
     <Event eventId={props.match.params.id}/>
   </div>
   )

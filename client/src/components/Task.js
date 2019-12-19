@@ -25,6 +25,9 @@ class Task extends React.Component {
               <td>Description:</td><td>{this.props.description}</td>
             </tr>
             <tr>
+              <td>Assignee:</td><td>{this.props.assignee}</td>
+            </tr>
+            <tr>
               <td>Deadline:</td><td>{ConvertTime(this.props.deadline)}</td>
             </tr>
             <tr>
