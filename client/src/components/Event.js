@@ -48,6 +48,9 @@ class Event extends React.Component{
               <td>Title</td><td>{this.props.title}</td><td>In Charge</td><td>{this.props.assignee}</td>
             </tr>
             <tr>
+              <td>Location</td><td>{this.props.location}</td><td>Date</td><td>{ConvertTime(this.props.startTime).date}</td>
+            </tr>
+            <tr>
               <td>Start Time</td><td>{ConvertTime(this.props.startTime).time}</td><td>End Time</td><td>{ConvertTime(this.props.endTime).time}</td>
             </tr>
           </tbody>
