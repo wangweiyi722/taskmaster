@@ -29,6 +29,8 @@ const HomePage = () => {
 const TaskPage = () => {
   return (<div>
     <Header activeItem="myTasksRoute"></Header>
+
+  
     TODO: Make a tasks page
   </div>);
 }

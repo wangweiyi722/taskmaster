@@ -38,9 +38,21 @@ th{
 	/* improve visual readability for IE8 and below */
 
 	/*  Define the background color for all the ODD table columns  */
-tr td:nth-child(odd){
+.event tr td:nth-child(odd){
   text-align:right;
   color:gray
+}
+
+.large.square{
+  margin-top:10px;
+  width:200px;
+  height:200px;
+  display:inline-block;
+}
+
+.large.square:hover{
+  color:lightblue;
+  border: 1px lightblue solid
 }
 
 .showTaskList{

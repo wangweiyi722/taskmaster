@@ -25,7 +25,7 @@ class EventList extends React.Component {
       return this.props.events.map(event=>{
         return (
             <tr className="eventListTableRow">
-              <td onMouseOver={null}><Link to={`/events/${event.id}`}>{event.title}</Link></td><td>{ConvertTime(event.startTime)}</td><td>{event.location}</td><td>{event.assignee}</td>
+              <td onMouseOver={null}><Link to={`/events/${event.id}`}>{event.title}</Link></td><td>{ConvertTime(event.startTime).date}</td><td>{event.location}</td><td>{event.assignee}</td>
             </tr>
         )
       })
@@ -35,7 +35,7 @@ class EventList extends React.Component {
   }
 
   render(){
-    return (<table>
+    return (<table className="EventList">
       <tr>
         <th>Event</th><th>Date</th><th>Location</th><th>In Charge</th>
       </tr>

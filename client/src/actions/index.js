@@ -1,6 +1,6 @@
 // Action creator
 import dbCaller from '../apis/dbCaller';
-import{FETCH_EVENT,FETCH_EVENTS,CREATE_TASK,CREATE_EVENT,FETCH_TASK,FETCH_TASKS,DELETE_TASK,EDIT_TASK,FETCH_TASKS_BY_USER,FETCH_TASKS_BY_EVENT,SELECT_EVENT,SIGN_IN,SIGN_OUT} from './types';
+import{FETCH_EVENT,FETCH_EVENTS,CREATE_TASK,CREATE_EVENT,FETCH_TASK,FETCH_TASKS,DELETE_TASK,EDIT_TASK,FETCH_TASKS_BY_ASSIGNEE,FETCH_TASKS_BY_EVENT,SELECT_EVENT,SIGN_IN,SIGN_OUT} from './types';
 import history from '../history';
 
 // Event action creators
@@ -78,6 +78,13 @@ export const fetchTasksByEventId = (id) => async (dispatch) => {
   console.log(response.data);
 
   dispatch ({type:FETCH_TASKS_BY_EVENT,payload:response.data});
+}
+
+export const fetchTasksByAssignee = (assignee) => async (dispatch) => {
+  const response = await dbCaller.get(`/tasks?assignee=${assignee}`);
+  console.log(response.data);
+
+  dispatch ({type:FETCH_TASKS_BY_ASSIGNEE,payload:response.data});
 }
 
 export const signIn = (profile) => {

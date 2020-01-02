@@ -48,7 +48,7 @@ class Event extends React.Component{
               <td>Title</td><td>{this.props.title}</td><td>In Charge</td><td>{this.props.assignee}</td>
             </tr>
             <tr>
-              <td>Start Time</td><td>{ConvertTime(this.props.startTime)}</td><td>End Time</td><td>{ConvertTime(this.props.endTime)}</td>
+              <td>Start Time</td><td>{ConvertTime(this.props.startTime).time}</td><td>End Time</td><td>{ConvertTime(this.props.endTime).time}</td>
             </tr>
           </tbody>
         </table>
@@ -59,11 +59,12 @@ class Event extends React.Component{
         }>{this.state.showTaskList?"hide":"show"} task list
         </button>
         <div style={{"display":this.state.showTaskList?'inline':'none'}}>
+          <button onClick={()=>this.props.selectEvent(this.props.id)} className="large square">{addTaskText}</button>
+          <div style={hide}><TaskCreate eventId={this.props.id}/></div>
           <TaskList listOfTaskIds={this.props.taskList}/>
         </div>
 
-        <button onClick={()=>this.props.selectEvent(this.props.id)}>{addTaskText}</button>
-        <div style={hide}><TaskCreate eventId={this.props.id}/></div>
+
       </div>
     );
   }
