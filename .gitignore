@@ -7,6 +7,7 @@
 
 # testing
 /coverage
+client/node_modules/.cache/babel-loader/
 client/node_modules/.cache/babel-loader/001fa4753a61164c97bea477dc25ba36.json
 client/node_modules/.cache/babel-loader/0058f320ec85af70ba760f22a254419e.json
 client/node_modules/.cache/babel-loader/00ed34f45f2fdf1691cca8977a2c9d8a.json
