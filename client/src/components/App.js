@@ -30,7 +30,7 @@ const TaskPage = () => {
   return (<div>
     <Header activeItem="myTasksRoute"></Header>
 
-  
+
     TODO: Make a tasks page
   </div>);
 }
@@ -58,7 +58,9 @@ class App extends React.Component{
   render(){
 
     return(
+
       <div>
+
         <Router history={history}>
           <Route path="/" exact component={HomePage}></Route>
           <Route path="/events" exact component={EventPage}></Route>

@@ -13,13 +13,7 @@ class Event extends React.Component{
     super(props);
     this.state={showTaskList:false}
   }
-  //Event properties:
-  //id
-  //title
-  //date
-  //time
-  //location
-  //task list
+
   componentDidMount(){
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);

@@ -5,7 +5,7 @@ import {
   FETCH_TASK,
   FETCH_TASKS,
   CHANGE_COMPLETION,
-  FETCH_TASKS_BY_USER,
+  FETCH_TASKS_BY_ASSIGNEE,
   FETCH_TASKS_BY_EVENT
 } from '../actions/types';
 import _ from "lodash";
@@ -24,6 +24,8 @@ export default (state={},action) => {
     case FETCH_TASKS:
       return {...state,[action.payload.id]:action.payload};
     case FETCH_TASKS_BY_EVENT:
+      return {...state,..._.mapKeys(action.payload,'id')};
+    case FETCH_TASKS_BY_ASSIGNEE:
       return {...state,..._.mapKeys(action.payload,'id')};
     default:
       return state;
