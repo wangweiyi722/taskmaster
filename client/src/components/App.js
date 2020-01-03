@@ -30,6 +30,7 @@ const TaskPage = () => {
   return (<div>
     <Header activeItem="myTasksRoute"></Header>
 
+    <TaskList assignee="wangweiyi722@gmail.com"></TaskList>
 
     TODO: Make a tasks page
   </div>);

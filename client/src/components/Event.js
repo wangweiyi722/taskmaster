@@ -15,6 +15,7 @@ class Event extends React.Component{
   }
 
   componentDidMount(){
+    console.log(this.props);
     this.props.fetchEvent(this.props.eventId).catch(error=>{
       console.log(error);
     });
@@ -30,7 +31,8 @@ class Event extends React.Component{
     if (this.props.title==undefined){
       return "loading";
     }
-
+    console.log("Check here");
+    console.log(this.props.id);
     return(
       <div className="event">
         <div className="eventHeader" style={{"paddingBottom":"20px"}}>
@@ -58,7 +60,7 @@ class Event extends React.Component{
         <div style={{"display":this.state.showTaskList?'inline':'none'}}>
           <button onClick={()=>this.props.selectEvent(this.props.id)} className="large square">{addTaskText}</button>
           <div style={hide}><TaskCreate eventId={this.props.id}/></div>
-          <TaskList listOfTaskIds={this.props.taskList}/>
+          <TaskList eventId={this.props.id}/>
         </div>
 
 

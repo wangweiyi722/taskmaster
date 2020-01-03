@@ -23,10 +23,11 @@ export default (state={},action) => {
       return {...state,[action.payload.id]:action.payload};
     case FETCH_TASKS:
       return {...state,[action.payload.id]:action.payload};
+    //whenever getting tasks for an event or assignee, reset the task redux state rather than add to it
     case FETCH_TASKS_BY_EVENT:
-      return {...state,..._.mapKeys(action.payload,'id')};
+      return {..._.mapKeys(action.payload,'id')};
     case FETCH_TASKS_BY_ASSIGNEE:
-      return {...state,..._.mapKeys(action.payload,'id')};
+      return {..._.mapKeys(action.payload,'id')};
     default:
       return state;
   }

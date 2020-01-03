@@ -4,6 +4,7 @@ import{FETCH_EVENT,FETCH_EVENTS,CREATE_TASK,CREATE_EVENT,FETCH_TASK,FETCH_TASKS,
 import history from '../history';
 
 // Event action creators
+/*
 export const fetchEvent = (id) => async (dispatch) => {
   const response = await dbCaller.get(`/events/${id}`);
   const tasks = await dbCaller.get(`/tasks?eventId=${id}`);
@@ -13,6 +14,21 @@ export const fetchEvent = (id) => async (dispatch) => {
     payload: {...response.data,...{"taskList":taskList}}
   });
 };
+*/
+export const fetchEvent = (id) => async (dispatch) => {
+  const response = await dbCaller.get(`/events/${id}`);
+  const tasks = await dbCaller.get(`/tasks?eventId=${id}`);
+  console.log(tasks);
+  dispatch ({
+    type:FETCH_EVENT,
+    payload: response.data
+  });
+  dispatch ({
+    type:FETCH_TASKS_BY_EVENT,
+    payload:tasks.data
+  });
+};
+
 
 export const fetchEvents = () => async (dispatch) => {
   const response = await dbCaller.get('/events');
@@ -75,6 +91,7 @@ export const changeCompletion = (props) => async (dispatch) => {
   });
 };
 export const fetchTasksByEventId = (id) => async (dispatch) => {
+  console.log(id);
   const response = await dbCaller.get(`/tasks?eventId=${id}`);
   console.log(response.data);
 
