@@ -6,6 +6,7 @@ import Task from "./Task";
 import TaskList from "./TaskList";
 import TaskCreate from "./TaskCreate";
 import Header from "./Header";
+import GoogleAuth from './GoogleAuth';
 import {Router, Route, Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchCurrentUser,signIn} from '../actions'
@@ -58,13 +59,8 @@ const SingleEventPage = (props) => {
 */
 class App extends React.Component{
 
-
-
-
   componentDidMount(){
-    console.log("app componentdidmount")
-    console.log(this.props);
-    this.props.fetchCurrentUser();
+
   }
 
   EventPage = () => {
@@ -85,10 +81,8 @@ class App extends React.Component{
   }
 
   TaskPage = () => {
-    console.log("taskpage log")
-    console.log(this.props.currentUserId)
-    console.log(window.gapi.auth)
-
+    console.log("TaskPage");
+    console.log(this.props.currentUserId);
     return (<div>
       <Header activeItem="myTasksRoute"></Header>
 
@@ -116,12 +110,13 @@ class App extends React.Component{
   }
 
   render(){
-    console.log("app.js props")
+
+    console.log("currentUserId");
     console.log(this.props.currentUserId);
+
     return(
 
       <div>
-
         <Router history={history}>
           <Route path="/" exact component={this.HomePage}></Route>
           <Route path="/events" exact component={this.EventPage}></Route>
@@ -139,8 +134,7 @@ class App extends React.Component{
 
 //TODO: create mapStateToProps function to get the auth information mapped to App.js props.
 const mapStateToProps = (state)=>{
-  console.log("mapStateToProps");
-  console.log(state.auth.user);
+
   if(state.auth.user===null){
     return {};
   }

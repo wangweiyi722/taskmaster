@@ -10,8 +10,7 @@ const INITIAL_STATE = {
 };
 
 export default (state=INITIAL_STATE,action)=>{
-  console.log("reducer")
-  console.log(state);
+
   switch (action.type) {
 
     //change the isSignedIn property of the auth state object

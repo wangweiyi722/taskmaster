@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {signIn,signOut} from '../actions';
+import {signIn,signOut,fetchTasksByAssignee} from '../actions';
 
 
 class GoogleAuth extends React.Component{
@@ -18,6 +18,9 @@ class GoogleAuth extends React.Component{
 
         //Get the auth object
         this.auth = window.gapi.auth2.getAuthInstance();
+        console.log("auth has loaded");
+        console.log(this.auth.currentUser.Ab.w3.U3);
+        this.props.fetchTasksByAssignee(this.auth.currentUser.Ab.w3.U3)
 
         //Update the redux store when this component mounts.
         //Get the current sign in state boolean => feed boolean to onAuthChange => onAuthChange calls the action creator => redux state is updated via reducer
@@ -30,9 +33,10 @@ class GoogleAuth extends React.Component{
       });
     });
   }
+
   onAuthChange = (isSignedIn) => {
 
-    //Call the appropriate action creator that we added a prop in connect function.
+    //Call the appropriate action creator that we added as a prop in connect function.
     if (isSignedIn){
 
       //pass in user that is signed in
@@ -81,4 +85,4 @@ const mapStateToProps = (state) => {
   return {isSignedIn: state.auth.isSignedIn}
 }
 
-export default connect(mapStateToProps,{signIn, signOut})(GoogleAuth);
+export default connect(mapStateToProps,{signIn, signOut, fetchTasksByAssignee})(GoogleAuth);

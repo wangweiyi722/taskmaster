@@ -100,7 +100,6 @@ export const fetchTasksByEventId = (id) => async (dispatch) => {
 
 export const fetchTasksByAssignee = (assignee) => async (dispatch) => {
   const response = await dbCaller.get(`/tasks?assignee=${assignee}`);
-  console.log(response.data);
 
   dispatch ({type:FETCH_TASKS_BY_ASSIGNEE,payload:response.data});
 }
@@ -110,7 +109,20 @@ export const fetchCurrentUser = () => async (dispatch) => {
   dispatch ({type:FETCH_CURRENT_USER});
 }
 
-export const signIn = (profile) => {
+export const signIn = (profile) => async (dispatch) => {
+  await dispatch({
+    type:SIGN_IN,
+    payload:{
+      id:profile.getId(),
+      firstName:profile.getGivenName(),
+      lastName:profile.getFamilyName(),
+      email:profile.getEmail()
+    }
+  });
+  fetchTasksByAssignee(profile.getEmail());
+
+  /*
+
   return {
     type: SIGN_IN,
     payload: {
@@ -120,6 +132,7 @@ export const signIn = (profile) => {
       email:profile.getEmail()
     }
   }
+  */
 }
 export const signOut = () => {
   return {

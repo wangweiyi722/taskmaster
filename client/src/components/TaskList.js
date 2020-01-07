@@ -16,23 +16,22 @@ export default TaskList;
 import React from "react";
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {fetchTasksByEventId,fetchTasksByAssignee,fetchCurrentUser} from '../actions';
+import {fetchTasks,fetchTasksByEventId,fetchTasksByAssignee,fetchCurrentUser} from '../actions';
 import {tableRowStyling, tableHeaderStyling} from '../styles';
 import {ConvertTime} from "../helpers/ConvertTime";
 import Task from './Task';
+import GoogleAuth from './GoogleAuth'
 
 class TaskList extends React.Component {
 
   componentDidMount(){
 
-    console.log("beginning of TaskList componentdidmount")
-    console.log(this.props)
-
-    console.log("fetching current user")
-    this.props.fetchCurrentUser();
-    console.log(this.props);
     //If there is an assignee
-    if (this.props.assignee !== null){
+
+
+    this.props.fetchTasks()
+
+    if (this.props.assignee == null){
       this.props.fetchTasksByAssignee(this.props.assignee).catch(error=>{
         console.log(error);
       });
@@ -42,8 +41,10 @@ class TaskList extends React.Component {
         console.log(error);
       });
     }
-    console.log("end of component did mount")
-    console.log(this.props)
+    else {
+      this.props.fetchTasks();
+    }
+    this.props.fetchTasks();
 
   }
 
@@ -88,4 +89,4 @@ const mapStateToProps = (state)=>{
   }
 }
 
-export default connect(mapStateToProps,{fetchTasksByEventId:fetchTasksByEventId,fetchTasksByAssignee:fetchTasksByAssignee,fetchCurrentUser:fetchCurrentUser})(TaskList);
+export default connect(mapStateToProps,{fetchTasks:fetchTasks,fetchTasksByEventId:fetchTasksByEventId,fetchTasksByAssignee:fetchTasksByAssignee,fetchCurrentUser:fetchCurrentUser})(TaskList);
