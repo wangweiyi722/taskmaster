@@ -28,9 +28,6 @@ class TaskList extends React.Component {
 
     //If there is an assignee
 
-
-    this.props.fetchTasks()
-
     if (this.props.assignee == null){
       this.props.fetchTasksByAssignee(this.props.assignee).catch(error=>{
         console.log(error);
@@ -44,7 +41,7 @@ class TaskList extends React.Component {
     else {
       this.props.fetchTasks();
     }
-    this.props.fetchTasks();
+
 
   }
 
