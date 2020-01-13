@@ -99,7 +99,7 @@ export const fetchTasksByEventId = (id) => async (dispatch) => {
 }
 
 export const fetchTasksByAssignee = (assignee) => async (dispatch) => {
-  const response = await dbCaller.get(`/tasks?assignee=${assignee}`);
+  const response = await dbCaller.get(`/tasks?assignee=${assignee}&_sort=deadline&_order=asc`);
 
   dispatch ({type:FETCH_TASKS_BY_ASSIGNEE,payload:response.data});
 }
