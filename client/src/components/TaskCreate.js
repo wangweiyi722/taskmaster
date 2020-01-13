@@ -30,6 +30,7 @@ class TaskCreate extends React.Component {
     //Add the eventID that was passed in as a prop from App.js as a new key in formValues
     formValues.eventId = this.props.eventId;
     formValues.completed = false;
+    formValues.deadline = parseInt(formValues.deadline);
     this.props.createTask(formValues);
     window.location.reload();
   }
