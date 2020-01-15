@@ -5,7 +5,7 @@
 }
 
 .eventListTableRow:hover{
-  background:gray
+  background:lightgray
 }
 
 table{
@@ -45,6 +45,8 @@ th{
 
 .large.square{
   display:inline-block;
+  margin-top:10px;
+  margin-left:10px;
   width:10%;
   padding-top:6%;
   align-items:right;
@@ -52,11 +54,13 @@ th{
   font-size:20pt;
   text-align:center;
   padding:70px 0px;
+  border:2px solid lightgray;
 }
 
 .large.square:hover{
   color:lightblue;
   cursor:pointer;
+  border:2px solid lightblue;
 }
 
 .showTaskList{
@@ -68,4 +72,9 @@ th{
   border:none;
   text-align:left;
   background-color:white
+}
+
+.showTaskList:hover{
+  background-color:lightblue;
+  cursor:pointer;
 }
