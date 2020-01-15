@@ -76,7 +76,12 @@ class App extends React.Component{
   HomePage = () => {
     return (<div>
       <Header activeItem="homeRoute"></Header>
-      TODO: Make a home page
+      <div style={{"display":"inline-block","width":"50%","border":"1px solid black"}}>
+        EventList
+      </div>
+      <div style={{"display":"inline-block","width":"50%","border":"1px solid black"}}>
+        Today's events
+      </div>
     </div>);
   }
 

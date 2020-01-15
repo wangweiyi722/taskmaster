@@ -22,7 +22,15 @@ class EventList extends React.Component {
       return <div>none</div>
     }
     else{
+      var date = new Date();
       return this.props.events.map(event=>{
+
+        if(this.props.filter === "week"){
+          if(ConvertTime(event.startTime).date===date){
+            console.log("matching");
+          }
+        }
+
         return (
             <tr className="eventListTableRow">
               <td onMouseOver={null}><Link to={`/events/${event.id}`}>{event.title}</Link></td><td>{ConvertTime(event.startTime).date}</td><td>{event.location}</td><td>{event.assignee}</td>
