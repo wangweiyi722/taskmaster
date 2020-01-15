@@ -44,12 +44,19 @@ th{
 }
 
 .large.square{
-  margin-top:10px;
   display:inline-block;
+  width:10%;
+  padding-top:6%;
+  align-items:right;
+  background-color:white;
+  font-size:20pt;
+  text-align:center;
+  padding:70px 0px;
 }
 
 .large.square:hover{
   color:lightblue;
+  cursor:pointer;
 }
 
 .showTaskList{

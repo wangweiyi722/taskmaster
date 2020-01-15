@@ -57,8 +57,8 @@ class Event extends React.Component{
           }
         }>{this.state.showTaskList?"hide":"show"} task list
         </button>
-        <div style={{"display":this.state.showTaskList?'inline':'none'}}>
-          <button onClick={()=>this.props.selectEvent(this.props.id)} className="large square">{addTaskText}</button>
+        <div style={{"display":this.state.showTaskList?'block':'none'}}>
+          <button onClick={()=>this.props.selectEvent(this.props.id)} className="large square">+{addTaskText}</button>
           <div style={hide}><TaskCreate eventId={this.props.id}/></div>
           <TaskList eventId={this.props.id}/>
         </div>
