@@ -27,8 +27,12 @@ class TaskList extends React.Component {
   componentDidMount(){
 
     //If there is an assignee
-
-    if (this.props.assignee == null){
+    console.log("TaskList debugging");
+    console.log("TaskList assignee");
+    console.log(this.props.assignee);
+    console.log("TaskList EventId");
+    console.log(this.props.eventId);
+    if (this.props.assignee){
       this.props.fetchTasksByAssignee(this.props.assignee).catch(error=>{
         console.log(error);
       });
