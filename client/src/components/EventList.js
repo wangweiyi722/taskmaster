@@ -22,20 +22,40 @@ class EventList extends React.Component {
       return <div>none</div>
     }
     else{
-      var date = new Date();
+      //get todays date
+      var t = new Date();
+      var today = new Date();
+      //get last Sunday's date
+      var lastSunday = new Date(t.setDate(t.getDate()-t.getDay()));
+      lastSunday.setHours(0,0,0,0);
+      var nextSaturday = new Date(lastSunday);
+      nextSaturday.setDate(nextSaturday.getDate()+6);
+      nextSaturday.setHours(23,59,59,999);
+      console.log("last Sunday");
+      console.log(lastSunday);
+      console.log(today);
+      console.log(nextSaturday);
       return this.props.events.map(event=>{
-
+        console.log("this week log")
+        console.log(this.props);
         if(this.props.filter === "week"){
-          if(ConvertTime(event.startTime).date===date){
+          if(event.startTime*1000>=lastSunday.getTime()&&event.startTime*1000<=nextSaturday.getTime()){
             console.log("matching");
+            return (
+              <tr className="eventListTableRow">
+                <td onMouseOver={null}><Link to={`/events/${event.id}`}>{event.title}</Link></td><td>{ConvertTime(event.startTime).formattedDate}</td><td>{event.location}</td><td>{event.assignee}</td>
+              </tr>
+            )
           }
         }
+        else{
+          return (
+              <tr className="eventListTableRow">
+                <td onMouseOver={null}><Link to={`/events/${event.id}`}>{event.title}</Link></td><td>{ConvertTime(event.startTime).formattedDate}</td><td>{event.location}</td><td>{event.assignee}</td>
+              </tr>
+          )
+        }
 
-        return (
-            <tr className="eventListTableRow">
-              <td onMouseOver={null}><Link to={`/events/${event.id}`}>{event.title}</Link></td><td>{ConvertTime(event.startTime).date}</td><td>{event.location}</td><td>{event.assignee}</td>
-            </tr>
-        )
       })
 
     }

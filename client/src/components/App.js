@@ -76,11 +76,13 @@ class App extends React.Component{
   HomePage = () => {
     return (<div>
       <Header activeItem="homeRoute"></Header>
+      <div>This week's events</div>
       <div style={{"display":"inline-block","width":"50%","border":"1px solid black"}}>
-        EventList
+
+        <EventList filter="week"></EventList>
       </div>
       <div style={{"display":"inline-block","width":"50%","border":"1px solid black"}}>
-        Today's events
+        Today's tasks
       </div>
     </div>);
   }

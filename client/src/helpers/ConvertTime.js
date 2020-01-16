@@ -9,7 +9,13 @@ export const ConvertTime = (unixTime) => {
   var amPm = Math.floor(a.getHours()/12)===1?"PM":"AM";
   var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + " " + amPm;
   return {
-    date:month+"/"+date+"/"+year,
+    year:year,
+    month:month,
+    date:date,
+    hour:hour,
+    min:min,
+    amPm:amPm,
+    formattedDate:month+"/"+date+"/"+year,
     time:hour + ':' + min + " " + amPm
   }
 }
